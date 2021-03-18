@@ -19,11 +19,14 @@ public class Application {
 
 		Project project = new Project("BugTrackingSystem", 21, developer.getId(), tester.getId(), manager.getId());
 
-		Bug bug = new Bug(5, project.getProjectId(), new Date());
+		Bug bug = new Bug(5, project.getProjectId(), new Date(),STATUS.NEW);
+		bug.getStatus();
+		
+		//manager.checkStatus(bug);
 		
 		System.out.println(bug);
 
-		tester.addBug(bug, tester.getId(), "index mismatch", PRIORITY.HIGH, TYPE.FUNCTIONAL, STATUS.NEW, "ARRAYLIST",
+		tester.addBug(bug, tester.getId(), "index mismatch", PRIORITY.HIGH, TYPE.FUNCTIONAL, STATUS.OPEN, "ARRAYLIST",
 				"v2.6", SEVERITY.SEVERE);
 		// System.out.println(tester);
 		manager.assignBug(bug, developer.getId());
@@ -38,7 +41,12 @@ public class Application {
 		
 		tester.setBugStatus(bug, STATUS.VERIFIED);
 		
+		bug.setStatus(STATUS.VERIFIED);
+		
+		
+		
 		manager.acknowledgeReport();
+		
 		
 		manager.mailToStakeHolder();
 		
