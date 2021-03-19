@@ -7,7 +7,7 @@ public class Application {
 
 		Manager manager = new Manager(101, "Srikant M");
 		manager.setMail("srikant.m@gmail");
-		manager.setPhoneNumber(76532201);
+		manager.setPhoneNumber(765322012);
 
 		Developer developer = new Developer(102, "Manish Roy");
 		developer.setMail("mroy@gmail");
