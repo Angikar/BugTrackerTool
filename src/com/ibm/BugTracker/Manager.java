@@ -22,7 +22,7 @@ public class Manager extends Employee {
 		if(bug1.getStatus()==STATUS.VERIFIED) {
 			return "Bug is verified";
 		}else {
-			return "OPEN";
+			return "Still needs correction";
 		}
 	}
 }
